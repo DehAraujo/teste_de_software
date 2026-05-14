@@ -7,12 +7,19 @@ que faltam ate o pipeline ficar verde.
 """
 
 import pytest
-from calculadora import soma, subtracao, multiplicacao, divisao, percentual, eh_par
-
+from calculadora import (
+    soma,
+    subtracao,
+    multiplicacao,
+    divisao,
+    percentual,
+    eh_par,
+)
 
 # ----------------------------------------------------------------
 # soma
 # ----------------------------------------------------------------
+
 
 def test_soma_inteiros_positivos():
     assert soma(3, 4) == 7
