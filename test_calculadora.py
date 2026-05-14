@@ -55,25 +55,42 @@ def test_multiplicacao_negativos():
 
 
 # ----------------------------------------------------------------
-# divisao -- INCOMPLETA: faltam casos importantes
+# divisao
 # ----------------------------------------------------------------
 
 def test_divisao_resultado_exato():
     assert divisao(10, 2) == 5.0
 
-# TODO: adicionar teste para divisao por zero
-# TODO: adicionar teste para resultado nao inteiro
+
+def test_divisao_por_zero():
+    with pytest.raises(ValueError):
+        divisao(10, 0)
+
+
+def test_divisao_resultado_decimal():
+    assert divisao(7, 2) == 3.5
 
 
 # ----------------------------------------------------------------
-# percentual -- NAO COBERTA
+# percentual
 # ----------------------------------------------------------------
 
-# TODO: adicionar testes para percentual
+def test_percentual_valido():
+    assert percentual(200, 10) == 20.0
+
+
+def test_percentual_negativo():
+    with pytest.raises(ValueError):
+        percentual(100, -5)
 
 
 # ----------------------------------------------------------------
-# eh_par -- NAO COBERTA
+# eh_par
 # ----------------------------------------------------------------
 
-# TODO: adicionar testes para eh_par
+def test_eh_par_true():
+    assert eh_par(4) is True
+
+
+def test_eh_par_false():
+    assert eh_par(5) is False
